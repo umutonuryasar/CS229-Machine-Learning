@@ -22,9 +22,13 @@ As an Electrical and Electronics Engineer specializing in AI/ML, I have specific
     * `Paper/`: A formal academic paper (NIPS/ICML style) detailing methodology and results.
     * `Poster/`: A high-level technical poster for visual synthesis of the findings.
 
-## 🛠 Tech Stack & Environment
+## Tech Stack & Environment
 
 * **OS:** Ubuntu
 * **Notes:** Obsidian (Markdown with $\LaTeX$ rendering)
 * **Environment:** Python 3.x, NumPy, Matplotlib, Jupyter Lab
 * **Documentation:** $\LaTeX$ (for the final paper and poster)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
