@@ -4,25 +4,27 @@
 
 **Machine Learning (ML)** is the study of computer algorithms that **improve automatically through experience**, where experience is typically defined as prior training data. The term was coined by **Arthur Samuel** in 1959, who demonstrated its potential through a checkers program that learned to play better than its creator by playing against itself.
 
-    - **Artificial Intelligence (AI) :**  A broad field focused on building programs that exhibit human-level cognitive performance. ML is a **subset** of AI that specifically uses data to achieve this performance. 
-    -  **Deep Learning:** A further specialized sub-field of ML that utilizes **neural networks** and has driven significant recent progress in computer vision, speech recognition and language translation. 
+- **Artificial Intelligence (AI) :**  A broad field focused on building programs that exhibit human-level cognitive performance. ML is a **subset** of AI that specifically uses data to achieve this performance.
+
+- **Deep Learning:** A further specialized sub-field of ML that utilizes **neural networks** and has driven significant recent progress in computer vision, speech recognition and language translation.
+
 ----
 
 ### Taxonomy of Learning
 
 Machine Learning problems are generally categorized into three main types based on the nature of the training signal:
 
-    - **Supervised Learning:** The algorithm is provided with "labeled" training data consisting of **input-output pairs**. 
+- **Supervised Learning:** The algorithm is provided with "labeled" training data consisting of **input-output pairs**.
 
-        - **Regression:** Predicting a **continuous, real-valued** output, such as wind speed or house prices.
+    - **Regression:** Predicting a **continuous, real-valued** output, such as wind speed or house prices.
 
-        - **Classification:** Predicting a **discrete** class or category, such as weather it will rain (binary) or identifying handwritten digits in the **MNIST** dataset (multi-class).
+    - **Classification:** Predicting a **discrete** class or category, such as weather it will rain (binary) or identifying handwritten digits in the **MNIST** dataset (multi-class).
 
-    - **Unsupervised Learning:** The algorithm receives data without explicit labels and must find **patterns or hidden structures**, such as clusters or sub-spaces.
+- **Unsupervised Learning:** The algorithm receives data without explicit labels and must find **patterns or hidden structures**, such as clusters or sub-spaces.
 
-        - **The Cocktail Party Problem:** An example where an algorithm (like **ICA**) separates mixed audio signals from multiple microphones into distinct voices without knowing what the individual voices sound like beforehand. 
+    - **The Cocktail Party Problem:** An example where an algorithm (like **ICA**) separates mixed audio signals from multiple microphones into distinct voices without knowing what the individual voices sound like beforehand.
 
-    - **Reinforcement Learning:** An agent learns to perform a task by interacting with an environment or simulator, adjusting its actions to maximize a reward, such as learning balance an **inverted  pendulum (cart-pole)**.
+- **Reinforcement Learning:** An agent learns to perform a task by interacting with an environment or simulator, adjusting its actions to maximize a reward, such as learning balance an **inverted  pendulum (cart-pole)**.
 
 ----
 
