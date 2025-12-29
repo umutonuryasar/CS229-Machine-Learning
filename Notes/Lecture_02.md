@@ -1,3 +1,5 @@
+## Lecture 02
+
 ### I. Linear Algebra Review (Continued)
 
 - **Determinants and Volume:** Geometrically, the absolute value of a determinant represents the **ratio of the volume of an output shape to the volume of an input shape** after a linear transformation. If a matrix is not full rank, at least one eigenvalue is zero, causing the shape to collapse and the volume (and determinant) to become zero.
@@ -8,7 +10,7 @@
 
 - **Matrix Decompositions:**
 
-	-  **Singular Value Decomposition (SVD):** Decomposes any matrix into $UΣVT$, where U and $V$ are orthonormal and $Σ$ contains real-valued singular values.
+	-  **Singular Value Decomposition (SVD):** Decomposes any matrix into $UΣV^T$, where U and $V$ are orthonormal and $Σ$ contains real-valued singular values.
 
 	- **Eigenvalue Decomposition:** Decomposes a square matrix into $UDU^{−1}$. For square symmetric matrices, SVD and eigenvalue decomposition are identical.
 
