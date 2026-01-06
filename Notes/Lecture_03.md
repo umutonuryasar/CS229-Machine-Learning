@@ -20,9 +20,9 @@ Lecture 3 concludes the review of probability concepts necessary for machine lea
 
 • **Joint and Marginal Distributions:** A joint distribution $P(X,Y)$ captures information about two variables simultaneously. **Marginalization** is the process of summing (discrete) or integrating (continuous) out one variable to find the distribution of the other.
 
-• **Bayes' Theorem:** Relates conditional, joint, and marginal probabilities: 
-	
-						$P(Y∣X)=P(X)P(X∣Y)P(Y)​$.
+• **Bayes' Theorem:** Relates conditional, joint, and marginal probabilities:
+
+	$P(Y∣X)=P(X)P(X∣Y)P(Y)​$.
 
 • **Independence:** Two random variables are independent if their joint distribution is the product of their marginals: $P(X,Y)=P(X)P(Y)$.
 
