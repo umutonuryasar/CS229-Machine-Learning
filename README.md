@@ -14,13 +14,13 @@ As an Electrical and Electronics Engineer specializing in AI/ML, I have specific
 
 ## Repository Structure
 
-* **`/Notes`**: Detailed Obsidian notes (Markdown + $\LaTeX$) focusing on mathematical proofs and interdisciplinary intuitions.
-* **`/Notebooks`**: Hands-on Jupyter Notebooks demonstrating concepts using **Python & NumPy** (e.g., Vectorized operations, manual Gradient Descent).
-* **`/Assignments`**: Problem sets and algorithmic implementations from the course syllabus.
-* **`/Final-Project`**: 
-    * `Code/`: Reproducible implementation of the final research project.
-    * `Paper/`: A formal academic paper (NIPS/ICML style) detailing methodology and results.
-    * `Poster/`: A high-level technical poster for visual synthesis of the findings.
+- **`/Lecture Notes`**: Official CS229 Summer 2020 lecture PDFs (Lectures 01–12, Full Notes, Deep Learning Notes). Personal study notes maintained in Obsidian — not tracked in this repo.
+- **`/Problem Sets`**: Original problem set PDFs (PS0–PS3).
+- **`/Problem Sets Solutions`**: Worked solutions (PS0 complete; PS1–PS3 in progress).
+- **`/Final Project`**: CS229 capstone — Knowledge Distillation ablation study (Logit-KD vs Feature-KD, ResNet-50 → ResNet-18 on CIFAR-10).
+  * `paper/` — Full project report (PDF + LaTeX source)
+  * `poster/` — Project poster (PDF + LaTeX source)
+  * Full implementation: [github.com/umutonuryasar/kd-cifar10](https://github.com/umutonuryasar/kd-cifar10)
 
 ## Tech Stack & Environment
 
