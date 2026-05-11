@@ -1,0 +1,27 @@
+\begin{answer}
+We first compute the gradient of $J(\theta)$. For a single training example, differentiating with respect to $\theta_j$ and using $g'(z) = g(z)(1-g(z))$:
+
+\[
+\frac{\partial J}{\partial \theta_j} = \frac{1}{\nexp} \sum_{i=1}^{\nexp} \bigl(h_\theta(x^{(i)}) - y^{(i)}\bigr)\, x_j^{(i)},
+\]
+
+where $h_i = g(\theta^T x^{(i)})$. Differentiating once more with respect to $\theta_k$:
+
+\[
+H_{jk} = \frac{\partial^2 J}{\partial \theta_j \partial \theta_k}
+= \frac{1}{\nexp} \sum_{i=1}^{\nexp} h_i(1-h_i)\, x_j^{(i)} x_k^{(i)}.
+\]
+
+In matrix form: $\displaystyle H = \frac{1}{\nexp} \sum_{i=1}^{\nexp} h_i(1-h_i)\, x^{(i)}{x^{(i)}}^T$.
+
+\medskip
+\textbf{Showing $H \succeq 0$:} For any vector $z \in \Re^d$,
+
+\[
+z^T H z
+= \frac{1}{\nexp} \sum_{i=1}^{\nexp} h_i(1-h_i)\, z^T x^{(i)}{x^{(i)}}^T z
+= \frac{1}{\nexp} \sum_{i=1}^{\nexp} h_i(1-h_i)\, \bigl({x^{(i)}}^T z\bigr)^2.
+\]
+
+Since $g(z) \in (0,1)$, we have $h_i(1-h_i) > 0$, and $({x^{(i)}}^T z)^2 \ge 0$. Therefore every term is non-negative, so $z^T H z \ge 0$ for all $z$, i.e., $H \succeq 0$. This means $J$ is convex and has no local minima other than the global one. $\blacksquare$
+\end{answer}

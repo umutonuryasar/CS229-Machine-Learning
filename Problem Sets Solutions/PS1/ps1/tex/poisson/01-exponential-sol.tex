@@ -1,0 +1,11 @@
+\begin{answer}
+Rewrite the Poisson pmf:
+\[
+p(y;\lambda) = \frac{e^{-\lambda}\lambda^y}{y!}
+= \frac{1}{y!}\exp\!\bigl(y\log\lambda - \lambda\bigr).
+\]
+Setting $\eta = \log\lambda$ (so $\lambda = e^\eta$), this matches the exponential family form $b(y)\exp(\eta T(y) - a(\eta))$ with:
+\[
+b(y) = \frac{1}{y!}, \quad T(y) = y, \quad \eta = \log\lambda, \quad a(\eta) = e^\eta.
+\]
+\end{answer}

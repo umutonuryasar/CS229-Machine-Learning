@@ -1,0 +1,8 @@
+\begin{answer}
+Using the MLE estimates from part (d), we compute $\phi$, $\mu_0$, $\mu_1$, and $\Sigma$ directly from the training data. From part (c), the GDA decision boundary is a logistic function with:
+\[
+\theta = \Sigma^{-1}(\mu_1 - \mu_0), \qquad
+\theta_0 = \tfrac{1}{2}(\mu_0^T\Sigma^{-1}\mu_0 - \mu_1^T\Sigma^{-1}\mu_1) + \log\frac{\phi}{1-\phi}.
+\]
+See \texttt{src/linearclass/gda.py} for the full implementation. Decision boundary plots on DS1 and DS2 are shown in the figures below.
+\end{answer}

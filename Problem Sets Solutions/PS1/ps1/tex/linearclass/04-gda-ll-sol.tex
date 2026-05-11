@@ -1,0 +1,37 @@
+\begin{answer}
+The log-likelihood decomposes as:
+\[
+\ell = \sum_i \log p(x^{(i)}\mid y^{(i)}) + \sum_i \log p(y^{(i)}).
+\]
+
+\textbf{Maximizing over $\phi$:}
+\[
+\frac{d\ell}{d\phi} = \frac{\sum_i y^{(i)}}{\phi} - \frac{n - \sum_i y^{(i)}}{1-\phi} = 0
+\implies \phi = \frac{1}{n}\sum_{i=1}^n \mathbf{1}\{y^{(i)}=1\}. \checkmark
+\]
+
+\textbf{Maximizing over $\mu_0$:}
+Only examples with $y^{(i)}=0$ contribute. Setting the gradient to zero:
+\[
+\frac{\partial \ell}{\partial \mu_0} = \Sigma^{-1}\sum_{i:y^{(i)}=0}(x^{(i)}-\mu_0) = 0
+\implies \mu_0 = \frac{\sum_i \mathbf{1}\{y^{(i)}=0\}\,x^{(i)}}{\sum_i \mathbf{1}\{y^{(i)}=0\}}. \checkmark
+\]
+
+\textbf{Maximizing over $\mu_1$:} By the same argument,
+\[
+\mu_1 = \frac{\sum_i \mathbf{1}\{y^{(i)}=1\}\,x^{(i)}}{\sum_i \mathbf{1}\{y^{(i)}=1\}}. \checkmark
+\]
+
+\textbf{Maximizing over $\Sigma$:} Let $\Lambda = \Sigma^{-1}$. The relevant terms are:
+\[
+\ell(\Lambda) = \frac{n}{2}\log|\Lambda| - \frac{1}{2}\operatorname{tr}\!\Bigl(\Lambda \sum_i (x^{(i)}-\mu_{y^{(i)}})(x^{(i)}-\mu_{y^{(i)}})^T\Bigr).
+\]
+Using $\frac{\partial}{\partial\Lambda}\log|\Lambda| = \Lambda^{-T}$ and setting the gradient to zero:
+\[
+\frac{n}{2}\Lambda^{-T} = \frac{1}{2}\sum_i (x^{(i)}-\mu_{y^{(i)}})(x^{(i)}-\mu_{y^{(i)}})^T.
+\]
+Since $\Lambda^{-T} = \Sigma$:
+\[
+\Sigma = \frac{1}{n}\sum_i (x^{(i)}-\mu_{y^{(i)}})(x^{(i)}-\mu_{y^{(i)}})^T. \checkmark
+\]
+\end{answer}

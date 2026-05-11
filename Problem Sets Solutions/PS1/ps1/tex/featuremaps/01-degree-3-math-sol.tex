@@ -1,0 +1,16 @@
+\begin{answer}
+\textbf{Objective function.} With the feature map $\hat{x}^{(i)} = \phi(x^{(i)}) = [1, x^{(i)}, (x^{(i)})^2, (x^{(i)})^3]^T$, the linear regression loss is:
+\[
+J(\theta) = \frac{1}{2\nexp}\sum_{i=1}^{\nexp}\bigl(\theta^T\hat{x}^{(i)} - y^{(i)}\bigr)^2.
+\]
+
+\textbf{Batch gradient descent update.}
+\[
+\theta \leftarrow \theta - \alpha\,\nabla_\theta J(\theta)
+= \theta - \frac{\alpha}{\nexp}\sum_{i=1}^{\nexp}\bigl(\theta^T\hat{x}^{(i)} - y^{(i)}\bigr)\hat{x}^{(i)},
+\]
+or in matrix form with design matrix $\hat{X}\in\mathbb{R}^{n\times 4}$:
+\[
+\theta \leftarrow \theta - \frac{\alpha}{\nexp}\hat{X}^T(\hat{X}\theta - y).
+\]
+\end{answer}

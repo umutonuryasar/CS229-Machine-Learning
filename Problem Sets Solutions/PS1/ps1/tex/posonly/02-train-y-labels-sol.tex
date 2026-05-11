@@ -1,0 +1,3 @@
+\begin{answer}
+We retrain logistic regression using only the partial $y$-labels. Because many true positives ($t=1$) are mislabeled as $y=0$, the classifier learns $h(x)\approx p(y=1|x) = \alpha\cdot p(t=1|x)$, which is a scaled-down version of what we want. The decision boundary is shifted relative to the true boundary. The plot is included below.
+\end{answer}

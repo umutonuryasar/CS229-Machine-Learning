@@ -1,0 +1,19 @@
+\begin{answer}
+The log-likelihood of one example (ignoring the constant $\log(y!)$):
+\[
+\log p(y^{(i)}\mid x^{(i)};\theta) = y^{(i)}\theta^T x^{(i)} - e^{\theta^T x^{(i)}} + \text{const}.
+\]
+Taking the derivative w.r.t.\ $\theta_j$:
+\[
+\frac{\partial}{\partial\theta_j}\log p(y^{(i)}\mid x^{(i)};\theta)
+= \bigl(y^{(i)} - e^{\theta^T x^{(i)}}\bigr)\,x_j^{(i)}
+= \bigl(y^{(i)} - h_\theta(x^{(i)})\bigr)\,x_j^{(i)}.
+\]
+The stochastic gradient ascent update rule is:
+\[
+\theta_j \leftarrow \theta_j + \alpha\bigl(y^{(i)} - h_\theta(x^{(i)})\bigr)\,x_j^{(i)},
+\]
+or in vector form: $\theta \leftarrow \theta + \alpha\bigl(y^{(i)} - h_\theta(x^{(i)})\bigr)\,x^{(i)}$.
+
+This has the same form as the update rule for logistic and linear regression, a general property of GLMs.
+\end{answer}

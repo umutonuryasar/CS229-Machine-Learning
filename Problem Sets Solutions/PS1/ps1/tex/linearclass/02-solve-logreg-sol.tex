@@ -1,0 +1,14 @@
+\begin{answer}
+We implement Newton's Method with the update rule $\theta := \theta - H^{-1} \nabla_\theta J(\theta)$.
+
+At each iteration:
+\begin{enumerate}
+    \item Compute predictions $h = g(X\theta)$ where $g(z) = 1/(1+e^{-z})$.
+    \item Gradient: $\nabla J = \frac{1}{\nexp} X^T(h - y)$.
+    \item Hessian: $H = \frac{1}{\nexp} X^T \operatorname{diag}(h \odot (1-h))\, X$.
+    \item Solve $H\,\delta = \nabla J$ and update $\theta \leftarrow \theta - \delta$.
+    \item Stop when $\|\delta\|_1 < \epsilon = 10^{-5}$.
+\end{enumerate}
+
+See \texttt{src/linearclass/logreg.py} for the full implementation. The decision boundary plots on DS1 and DS2 are included in the figures below.
+\end{answer}

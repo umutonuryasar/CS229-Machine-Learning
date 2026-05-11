@@ -1,0 +1,33 @@
+\begin{answer}
+Applying Bayes' rule:
+\[
+p(y=1 \mid x) = \frac{1}{1 + \dfrac{p(x\mid y=0)\,(1-\phi)}{p(x\mid y=1)\,\phi}}
+= \frac{1}{1 + \exp\!\left(\log\dfrac{p(x\mid y=0)(1-\phi)}{p(x\mid y=1)\phi}\right)}.
+\]
+
+Expanding the log ratio of the Gaussian densities:
+\[
+\log\frac{p(x|y=0)}{p(x|y=1)}
+= -\tfrac{1}{2}(x-\mu_0)^T\Sigma^{-1}(x-\mu_0)
+  +\tfrac{1}{2}(x-\mu_1)^T\Sigma^{-1}(x-\mu_1).
+\]
+
+Expanding each quadratic, the $x^T\Sigma^{-1}x$ terms cancel (since both classes share $\Sigma$):
+\[
+= (\mu_0 - \mu_1)^T\Sigma^{-1}x
+  - \tfrac{1}{2}\bigl(\mu_0^T\Sigma^{-1}\mu_0 - \mu_1^T\Sigma^{-1}\mu_1\bigr).
+\]
+
+Adding the prior term and negating to obtain the standard sigmoid form:
+\[
+\boxed{p(y=1\mid x) = \frac{1}{1+\exp(-(\theta^T x + \theta_0))}}
+\]
+where
+\[
+\theta = \Sigma^{-1}(\mu_1 - \mu_0), \qquad
+\theta_0 = \tfrac{1}{2}(\mu_0^T\Sigma^{-1}\mu_0 - \mu_1^T\Sigma^{-1}\mu_1)
+           + \log\frac{\phi}{1-\phi}.
+\]
+
+The cancellation of the quadratic term shows that the shared covariance assumption is precisely what makes the GDA decision boundary \emph{linear}.
+\end{answer}
