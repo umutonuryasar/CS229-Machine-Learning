@@ -14,6 +14,7 @@ As an Electrical and Electronics Engineer specializing in AI/ML, I have specific
 
 ## Repository Structure
 
+- **`/Extra Notes`**: Some extra suplementary readings. 
 - **`/Lecture Notes`**: Official CS229 Summer 2020 lecture PDFs (Lectures 01–12, Full Notes, Deep Learning Notes). Personal study notes maintained in Obsidian — not tracked in this repo.
 - **`/Problem Sets`**: Original problem set PDFs (PS0–PS3).
 - **`/Problem Sets Solutions`**: Worked solutions (PS0 complete; PS1–PS3 in progress).
