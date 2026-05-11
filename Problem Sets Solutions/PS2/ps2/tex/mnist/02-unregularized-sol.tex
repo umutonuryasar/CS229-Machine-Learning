@@ -1,0 +1,14 @@
+\begin{answer}
+See \texttt{src/mnist/nn.py} for the implementations of \texttt{softmax}, \texttt{sigmoid}, \texttt{get\_initial\_params}, \texttt{forward\_prop}, \texttt{backward\_prop}, and \texttt{gradient\_descent\_epoch}.
+
+The \textbf{backpropagation} gradients are derived as follows. Let $n$ be the batch size. From part (a), $\nabla_{z^{(i)}} \mathrm{CE} = \hat{y}^{(i)} - y^{(i)}$, so $\frac{\partial J_{MB}}{\partial Z^{[2]}} = \frac{1}{n}(\hat{Y} - Y)$ where $\hat{Y}, Y \in \mathbb{R}^{n\times K}$.
+
+\begin{align*}
+\frac{\partial J}{\partial W^{[2]}} &= A^T \cdot \frac{\hat{Y}-Y}{n}, \quad \frac{\partial J}{\partial b^{[2]}} = \sum_i \frac{\hat{y}^{(i)}-y^{(i)}}{n},\\
+\delta^{[1]} &= \frac{\hat{Y}-Y}{n} \cdot {W^{[2]}}^T \odot A \odot (1-A),\\
+\frac{\partial J}{\partial W^{[1]}} &= X^T \cdot \delta^{[1]}, \quad \frac{\partial J}{\partial b^{[1]}} = \sum_i \delta^{[1]}_i.
+\end{align*}
+
+The loss and accuracy curves are shown in the submitted plots (\texttt{baseline.pdf}).
+\end{answer}
+

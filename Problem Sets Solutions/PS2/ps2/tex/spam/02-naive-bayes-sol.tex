@@ -1,0 +1,12 @@
+\begin{answer}
+See \texttt{src/spam/spam.py} for the implementations of \texttt{fit\_naive\_bayes\_model} and \texttt{predict\_from\_naive\_bayes\_model}.
+
+The multinomial Naive Bayes model with Laplace smoothing estimates:
+\begin{align*}
+\hat\phi_{j|y=k} &= \frac{\sum_{i:y^{(i)}=k} x^{(i)}_j + 1}{\sum_{i:y^{(i)}=k}\sum_{\ell} x^{(i)}_\ell + V},
+\end{align*}
+where $V$ is the vocabulary size, and predicts using log-probabilities to avoid underflow:
+$$\hat y = \arg\max_{k\in\{0,1\}} \left[\log p(y=k) + \sum_j x_j \log \hat\phi_{j|y=k}\right].$$
+
+The Naive Bayes model achieves an accuracy of \textbf{97.85\%} on the test set.
+\end{answer}

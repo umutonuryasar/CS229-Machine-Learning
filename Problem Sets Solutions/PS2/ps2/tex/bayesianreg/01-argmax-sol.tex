@@ -1,0 +1,8 @@
+\begin{answer}
+By Bayes' rule:
+$$p(\theta \mid x, y) = \frac{p(y \mid x, \theta)\, p(\theta \mid x)}{p(y \mid x)}.$$
+Since $p(y \mid x)$ does not depend on $\theta$, maximizing over $\theta$ gives:
+$$\theta_{\mathrm{MAP}} = \operatorname*{argmax}_\theta\; p(y \mid x, \theta)\, p(\theta \mid x).$$
+Under the assumption $p(\theta) = p(\theta \mid x)$ (i.e., the prior on $\theta$ does not change when we condition on the inputs $x$):
+$$\theta_{\mathrm{MAP}} = \operatorname*{argmax}_\theta\; p(y \mid x, \theta)\, p(\theta). \qquad \square$$
+\end{answer}

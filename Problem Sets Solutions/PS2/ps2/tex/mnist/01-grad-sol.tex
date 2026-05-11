@@ -1,0 +1,20 @@
+\begin{answer}
+Let $l \in \{1,\ldots,K\}$ be the index of the true class, so $y^{(i)}_l = 1$ and $y^{(i)}_j = 0$ for $j \neq l$. The softmax output is $\hat{y}^{(i)}_k = \frac{e^{z^{(i)}_k}}{\sum_{m} e^{z^{(i)}_m}}$.
+
+The cross-entropy loss for this example is $\mathrm{CE}(y^{(i)}, \hat{y}^{(i)}) = -\log \hat{y}^{(i)}_l$.
+
+\textbf{Case $j \neq l$:}
+\begin{align*}
+\frac{\partial \hat{y}^{(i)}_l}{\partial z^{(i)}_j} &= \frac{-e^{z^{(i)}_l} e^{z^{(i)}_j}}{\left(\sum_m e^{z^{(i)}_m}\right)^2} = -\hat{y}^{(i)}_l \hat{y}^{(i)}_j, \\
+\frac{\partial \mathrm{CE}}{\partial z^{(i)}_j} &= -\frac{1}{\hat{y}^{(i)}_l}\cdot\left(-\hat{y}^{(i)}_l \hat{y}^{(i)}_j\right) = \hat{y}^{(i)}_j = \hat{y}^{(i)}_j - y^{(i)}_j.
+\end{align*}
+
+\textbf{Case $j = l$:}
+\begin{align*}
+\frac{\partial \hat{y}^{(i)}_l}{\partial z^{(i)}_l} &= \frac{e^{z^{(i)}_l}\sum_m e^{z^{(i)}_m} - \left(e^{z^{(i)}_l}\right)^2}{\left(\sum_m e^{z^{(i)}_m}\right)^2} = \hat{y}^{(i)}_l\left(1 - \hat{y}^{(i)}_l\right), \\
+\frac{\partial \mathrm{CE}}{\partial z^{(i)}_l} &= -\frac{1}{\hat{y}^{(i)}_l}\cdot \hat{y}^{(i)}_l\left(1-\hat{y}^{(i)}_l\right) = \hat{y}^{(i)}_l - 1 = \hat{y}^{(i)}_l - y^{(i)}_l.
+\end{align*}
+
+Combining both cases: $\nabla_{z^{(i)}} \mathrm{CE}(y^{(i)}, \hat{y}^{(i)}) = \hat{y}^{(i)} - y^{(i)} \in \mathbb{R}^K$. \hfill$\square$
+\end{answer}
+

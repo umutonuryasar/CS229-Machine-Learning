@@ -1,0 +1,17 @@
+\begin{answer}
+For linear regression $y = \theta^T x + \epsilon$ with $\epsilon \sim \mathcal{N}(0,\sigma^2)$ and i.i.d.\ examples:
+$$\log p(\vec{y}|X,\theta) = -\frac{n}{2}\log(2\pi\sigma^2) - \frac{1}{2\sigma^2}\|X\theta - \vec{y}\|_2^2.$$
+
+From part (b) with $\lambda = 1/(2\eta^2)$:
+\begin{align*}
+\theta_{\mathrm{MAP}} &= \operatorname*{argmin}_\theta \left[-\log p(\vec{y}|X,\theta) + \frac{\|\theta\|_2^2}{2\eta^2}\right]\\
+&= \operatorname*{argmin}_\theta \left[\frac{1}{2\sigma^2}\|X\theta - \vec{y}\|_2^2 + \frac{1}{2\eta^2}\|\theta\|_2^2\right].
+\end{align*}
+
+Setting the gradient to zero:
+$$\frac{1}{\sigma^2}X^T(X\theta - \vec{y}) + \frac{1}{\eta^2}\theta = 0 \implies \left(X^TX + \frac{\sigma^2}{\eta^2}I\right)\theta = X^T\vec{y}.$$
+
+Solving (the matrix $X^TX + \frac{\sigma^2}{\eta^2}I$ is positive definite and therefore invertible):
+$$\boxed{\theta_{\mathrm{MAP}} = \left(X^TX + \frac{\sigma^2}{\eta^2}I\right)^{-1}X^T\vec{y}.}$$
+This is the Ridge regression closed-form solution with regularization strength $\sigma^2/\eta^2$.
+\end{answer}

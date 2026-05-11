@@ -1,0 +1,21 @@
+\begin{answer}
+We represent $\theta^{(i)}$ implicitly using the \textbf{kernel trick}. After seeing $i$ training examples, $\theta$ is always a linear combination of the (implicitly mapped) feature vectors:
+$$\theta^{(i)} = \sum_{j=1}^{i} \beta_j\, \phi(x^{(j)}),$$
+where $\beta_j = \alpha\bigl(y^{(j)} - h_{\theta^{(j-1)}}(x^{(j)})\bigr)$ is the update coefficient for the $j$-th example. We store the list of pairs $\{(\beta_j, x^{(j)})\}_{j=1}^i$ in place of $\theta$.
+
+\begin{enumerate}[label=\roman*.]
+
+\item \textbf{Representing $\theta^{(i)}$.} We store the pairs $(\beta_j, x^{(j)})$ for $j = 1,\ldots,i$. The initial value $\theta^{(0)} = \vec{0}$ is represented by an empty list (zero terms in the sum).
+
+\item \textbf{Making a prediction on $x^{(i+1)}$.} We compute the inner product implicitly using the kernel:
+$${\theta^{(i)}}^T \phi(x^{(i+1)}) = \sum_{j=1}^{i} \beta_j\, \phi(x^{(j)})^T\phi(x^{(i+1)}) = \sum_{j=1}^{i} \beta_j\, K(x^{(j)},\, x^{(i+1)}).$$
+The prediction is $h_{\theta^{(i)}}(x^{(i+1)}) = g\!\left(\displaystyle\sum_{j=1}^{i} \beta_j K(x^{(j)}, x^{(i+1)})\right)$.
+
+\item \textbf{Update rule.} Given $(x^{(i+1)}, y^{(i+1)})$:
+\begin{enumerate}
+  \item Compute prediction $p = h_{\theta^{(i)}}(x^{(i+1)})$ as in (ii).
+  \item Append a new coefficient $\beta_{i+1} = \alpha(y^{(i+1)} - p)$ and store $x^{(i+1)}$.
+\end{enumerate}
+This corresponds exactly to $\theta^{(i+1)} = \theta^{(i)} + \alpha(y^{(i+1)} - p)\,\phi(x^{(i+1)})$ without ever computing $\phi$ explicitly.
+\end{enumerate}
+\end{answer}
