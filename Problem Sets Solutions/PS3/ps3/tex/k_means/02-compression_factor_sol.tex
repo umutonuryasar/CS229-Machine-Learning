@@ -1,0 +1,18 @@
+\begin{answer}
+\textbf{Storage costs.}
+
+\emph{Original image:} Each of the $512 \times 512 = 262{,}144$ pixels is stored with 24-bit colour (3 channels × 8 bits). Total storage:
+$$262{,}144 \times 24 = 6{,}291{,}456 \text{ bits.}$$
+
+\emph{Compressed image:} With $k = 16$ colours, each pixel's colour is represented by its cluster index, requiring $\lceil\log_2 16\rceil = 4$ bits. We also need to store the codebook of 16 centroids (each 24 bits):
+$$262{,}144 \times 4 + 16 \times 24 = 1{,}048{,}576 + 384 = 1{,}048{,}960 \text{ bits.}$$
+
+\textbf{Compression factor:}
+$$\text{Factor} = \frac{6{,}291{,}456}{1{,}048{,}960} \approx 5.997 \approx 6.$$
+
+So the compression scheme achieves approximately a \textbf{6$\times$ reduction} in storage. The codebook overhead ($384$ bits) is negligible compared to the pixel index storage.
+
+\textbf{Note:} In general, for an $H \times W$ image and $k$ colours:
+$$\text{Factor} = \frac{HW \times 24}{HW \times \log_2 k + k \times 24}.$$
+As $HW \to \infty$ this approaches $24 / \log_2 k$. For $k=16$, this limit is $24/4 = 6$.
+\end{answer}

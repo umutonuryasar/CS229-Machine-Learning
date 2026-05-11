@@ -1,0 +1,11 @@
+\begin{answer}
+For a standard Laplace source, the PDF is $g'(s) = \frac{1}{2}e^{-|s|}$. Then:
+$$\log g'(s) = -\log 2 - |s|, \qquad \frac{d}{ds}\log g'(s) = -\operatorname{sign}(s).$$
+
+The gradient of the log-likelihood w.r.t.\ $W$ for a single example $x$ is:
+$$\nabla_W \ell = (W^T)^{-1} + \sum_{j=1}^\di \frac{d\log g'(w_j^Tx)}{d(w_j^Tx)}\, e_j x^T = (W^T)^{-1} - \operatorname{sign}(Wx)\,x^T,$$
+where $\operatorname{sign}(Wx) \in \R^\di$ is the element-wise sign of $Wx$, and the outer product $\operatorname{sign}(Wx)\,x^T \in \R^{\di\times\di}$ treats $\operatorname{sign}(Wx)$ as a column vector.
+
+The stochastic gradient ascent update rule for a single example $x$ is therefore:
+$$\boxed{W := W + \alpha\left[(W^T)^{-1} - \operatorname{sign}(Wx)\,x^T\right].}$$
+\end{answer}

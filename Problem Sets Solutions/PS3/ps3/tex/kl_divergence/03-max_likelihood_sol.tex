@@ -1,0 +1,23 @@
+\begin{answer}
+We show $\arg\min_\theta \KL(\hat{P}\|P_\theta) = \arg\max_\theta \sum_{i=1}^\nexp \log P_\theta(\xsi)$.
+
+Expanding the KL divergence:
+\begin{align*}
+\KL(\hat{P}\|P_\theta)
+&= \sum_x \hat{P}(x)\log\frac{\hat{P}(x)}{P_\theta(x)} \\
+&= \sum_x \hat{P}(x)\log \hat{P}(x) - \sum_x \hat{P}(x)\log P_\theta(x).
+\end{align*}
+
+The first term $\sum_x \hat{P}(x)\log\hat{P}(x) = -H(\hat{P})$ does not depend on $\theta$. Therefore:
+$$\arg\min_\theta \KL(\hat{P}\|P_\theta) = \arg\max_\theta \sum_x \hat{P}(x)\log P_\theta(x).$$
+
+Substituting $\hat{P}(x) = \frac{1}{\nexp}\sum_{i=1}^\nexp \mathbf{1}\{\xsi = x\}$:
+\begin{align*}
+\sum_x \hat{P}(x)\log P_\theta(x)
+&= \sum_x \frac{1}{\nexp}\sum_{i=1}^\nexp \mathbf{1}\{\xsi = x\}\log P_\theta(x) \\
+&= \frac{1}{\nexp}\sum_{i=1}^\nexp \log P_\theta(\xsi).
+\end{align*}
+
+Scaling by $\nexp > 0$ does not change the argmax, so:
+$$\arg\min_\theta \KL(\hat{P}\|P_\theta) = \arg\max_\theta \sum_{i=1}^\nexp \log P_\theta(\xsi). \qquad \square$$
+\end{answer}

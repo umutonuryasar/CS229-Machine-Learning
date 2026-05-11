@@ -1,0 +1,12 @@
+\begin{answer}
+\begin{enumerate}[label=\roman*.]
+\item \textbf{Number of iterations to converge.}
+Semi-supervised EM generally converges in \emph{fewer} iterations than unsupervised EM. The labeled examples provide a strong signal that quickly pushes the parameters toward the true cluster structure, so fewer EM iterations are needed to reach the convergence threshold.
+
+\item \textbf{Stability across initializations.}
+Semi-supervised EM is substantially \emph{more stable}. Across the three trials the cluster assignments were consistent (up to label permutation). Unsupervised EM showed high variability: different initializations sometimes led to qualitatively different solutions, including cluster collapse where two Gaussians were assigned to the same region.
+
+\item \textbf{Overall quality of assignments.}
+Semi-supervised EM produced \emph{better} assignments. In particular, it correctly separated the fourth high-variance Gaussian from the three low-variance ones in all trials, whereas unsupervised EM frequently misassigned points from the diffuse cluster to adjacent clusters. This is consistent with the fact that, without labeled data, the high-variance cluster is hard to distinguish from overlap of the other three.
+\end{enumerate}
+\end{answer}

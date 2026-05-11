@@ -1,0 +1,20 @@
+\begin{answer}
+For a standard normal source, $g'(s) = \frac{1}{\sqrt{2\pi}}e^{-s^2/2}$, so
+$$\log g'(s) = -\tfrac{1}{2}\log(2\pi) - \tfrac{1}{2}s^2.$$
+
+The log-likelihood becomes:
+$$\ell(W) = \nexp\log|W| + \sum_{i=1}^\nexp\sum_{j=1}^\di \left(-\tfrac{1}{2}\log 2\pi - \tfrac{1}{2}(w_j^T x^{(i)})^2\right).$$
+
+Taking the gradient w.r.t.\ $W$ and setting it to zero (using $\nabla_W \log|W| = (W^T)^{-1}$):
+$$\nabla_W\ell(W) = \nexp(W^T)^{-1} - \sum_{i=1}^\nexp (Wx^{(i)})(x^{(i)})^T = 0.$$
+
+Rearranging:
+$$(W^T)^{-1} = \frac{1}{\nexp}\sum_{i=1}^\nexp Wx^{(i)}(x^{(i)})^T = W\hat{\Sigma},$$
+where $\hat{\Sigma} = \frac{1}{\nexp}\sum_{i=1}^\nexp x^{(i)}(x^{(i)})^T$ is the sample covariance. This gives:
+$$W^T W = \hat{\Sigma}^{-1}.$$
+
+\textbf{Rotational ambiguity:} If $W$ satisfies $W^TW = \hat{\Sigma}^{-1}$, then so does $RW$ for any orthogonal matrix $R$ (i.e.\ $R^TR = I$):
+$$(RW)^T(RW) = W^TR^TRW = W^TW = \hat{\Sigma}^{-1}.$$
+
+Consequently, $W$ is only identifiable up to an arbitrary orthogonal transformation. This is the fundamental limitation of ICA with Gaussian sources: a multivariate Gaussian is rotationally invariant (any orthogonal rotation of a Gaussian random vector is still Gaussian with the same distribution), so there is no way to distinguish the true mixing matrix $A$ from $AR^T$ using second-order statistics alone. ICA with Gaussian sources is therefore \textbf{not identifiable}.
+\end{answer}

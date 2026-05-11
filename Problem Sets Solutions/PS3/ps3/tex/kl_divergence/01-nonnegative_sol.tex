@@ -1,0 +1,25 @@
+\begin{answer}
+We want to show $\KL(P\|Q) \geq 0$ with equality iff $P = Q$.
+
+\textbf{Non-negativity:}
+
+\begin{align*}
+\KL(P\|Q) &= \sum_{x \in \mathcal{X}} P(x) \log \frac{P(x)}{Q(x)} \\
+&= -\sum_{x \in \mathcal{X}} P(x) \log \frac{Q(x)}{P(x)} \\
+&= -\E_{x \sim P}\left[\log \frac{Q(x)}{P(x)}\right].
+\end{align*}
+
+Since $f(t) = -\log t$ is strictly convex (its second derivative $1/t^2 > 0$), Jensen's inequality gives
+$$-\E_{x \sim P}\left[\log \frac{Q(x)}{P(x)}\right] \geq -\log \E_{x \sim P}\left[\frac{Q(x)}{P(x)}\right].$$
+
+Computing the expectation:
+$$\E_{x \sim P}\left[\frac{Q(x)}{P(x)}\right] = \sum_{x} P(x) \frac{Q(x)}{P(x)} = \sum_x Q(x) = 1.$$
+
+Therefore $\KL(P\|Q) \geq -\log 1 = 0$.
+
+\textbf{Equality condition:}
+
+$\KL(P\|Q) = 0$ if and only if $E[f(X)] = f(E[X])$. Because $f(t) = -\log t$ is \emph{strictly} convex, equality in Jensen's inequality holds iff the random variable $X = Q(x)/P(x)$ is constant with probability 1 (under $P$), i.e.,
+$$\frac{Q(x)}{P(x)} = c \quad \text{for all } x \text{ with } P(x) > 0.$$
+Since both $P$ and $Q$ are probability distributions summing to 1, we have $c = 1$, which means $P(x) = Q(x)$ for all $x$.
+\end{answer}

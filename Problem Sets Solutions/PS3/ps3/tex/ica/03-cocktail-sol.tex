@@ -1,0 +1,9 @@
+\begin{answer}
+The \texttt{update\_W} and \texttt{unmix} functions are implemented in \texttt{src/ica/ica.py} using the Laplace update rule derived in part (b).
+
+\textbf{\texttt{update\_W}:} For a single data point $x$, computes the gradient $\nabla_W\ell = (W^T)^{-1} - \operatorname{sign}(Wx)\,x^T$ and returns $W + \alpha\cdot\nabla_W\ell$.
+
+\textbf{\texttt{unmix}:} Given the learned $W$ and data matrix $X$ (rows are examples), returns $S$ where each row $S_i = W x^{(i)}$.
+
+The unmixing matrix $W$ obtained after running \texttt{ica.py} (5$\times$5) is stored in \texttt{src/ica/W.txt}. The five separated audio tracks (\texttt{split\_0.wav}--\texttt{split\_4.wav}) are clearly distinct sound sources. In particular, \texttt{split\_0.wav} closely matches \texttt{correct\_split\_0.wav}.
+\end{answer}
