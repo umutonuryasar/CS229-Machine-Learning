@@ -1,9 +1,0 @@
-\begin{answer}
-Dataset $B$ is \textbf{linearly separable}. When the data is perfectly linearly separable, the log-likelihood of logistic regression has no finite maximizer: for any separating direction $\theta^*$ (i.e., ${\theta^*}^T x^{(i)} > 0$ when $y^{(i)}=1$ and $< 0$ when $y^{(i)}=0$), scaling to $c\theta^*$ with $c \to \infty$ drives all sigmoid outputs toward 0 or 1, continuously increasing the log-likelihood without bound. The gradient never vanishes at a finite point, so gradient ascent diverges.
-
-\textbf{Evidence:} We can verify that dataset $B$ is linearly separable by observing that, with a decision boundary obtained by running logistic regression until a large number of iterations, all training points are correctly classified with high confidence. Dataset $A$ is not linearly separable, so the log-likelihood achieves a finite maximum and gradient ascent converges.
-
-More formally, for linearly separable data there exists $\theta^*$ such that $y^{(i)}(\theta^{*T} x^{(i)}) > 0$ for all $i$. For any $c > 0$:
-$$\ell(c\theta^*) = \sum_{i=1}^n \log \sigma\!\bigl(y^{(i)} \cdot c{\theta^*}^T x^{(i)}\bigr) \xrightarrow{c\to\infty} 0,$$
-so the supremum of $\ell$ is 0, achieved only in the limit. The gradient $\nabla_\theta \ell(c\theta^*)$ points along $\theta^*$ and never reaches zero at any finite $c$.
-\end{answer}

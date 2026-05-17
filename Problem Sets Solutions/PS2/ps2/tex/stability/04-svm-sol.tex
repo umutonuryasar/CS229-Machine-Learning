@@ -1,5 +1,0 @@
-\begin{answer}
-\textbf{No}, SVMs are not vulnerable to this issue. For linearly separable data, the hard-margin SVM solves:
-$$\min_{w,b} \|w\|^2 \quad \text{subject to} \quad y^{(i)}(w^T x^{(i)} + b) \geq 1, \;\forall i.$$
-The constraints force the margin to be exactly $2/\|w\|$, which means the optimal $w^*$ has \emph{finite} norm equal to $1/\text{margin}$. The SVM objective explicitly regularizes by minimizing $\|w\|^2$, so even when the data is perfectly separable the solution is well-defined and bounded. This is in contrast to logistic regression, where the maximum likelihood objective has no regularization and the parameters diverge to infinity for separable data.
-\end{answer}

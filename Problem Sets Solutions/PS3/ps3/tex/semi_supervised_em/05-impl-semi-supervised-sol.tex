@@ -1,9 +1,0 @@
-\begin{answer}
-The semi-supervised EM is implemented in \texttt{run\_semi\_supervised\_em} in \texttt{src/semi\_supervised\_em/gmm.py}. The E-step is identical to the unsupervised case (only unlabeled weights $w_{ij}$ are updated). The M-step incorporates the labeled examples $(\tilde{x}^{(i)}, \tilde{z}^{(i)})$ with weight $\alpha = 20$ when updating $\phi$, $\mu$, $\Sigma$ as derived in part (c).
-
-Three scatter plots are generated for the semi-supervised runs.
-
-\textbf{Observation:} With only 5 labeled examples per cluster, the semi-supervised EM reliably identifies all 4 clusters across all three trials. The labeled data acts as anchors, preventing cluster collapse and guiding the algorithm to correct assignments even for the high-variance fourth Gaussian.
-
-\textit{[See the generated PDF plots \texttt{pred\_ss\_0.pdf}, \texttt{pred\_ss\_1.pdf}, \texttt{pred\_ss\_2.pdf}.]}
-\end{answer}

@@ -1,0 +1,15 @@
+name: cs229
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - matplotlib
+  - jupyterlab
+  - scikit-learn
+  - scipy
+  - pip
+  - pip:
+      - torch
+      - torchvision

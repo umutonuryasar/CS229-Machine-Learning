@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Outputs
+*.wav
+*.log
+*.aux
+*.synctex.gz
+*.out
+*.toc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+venv/

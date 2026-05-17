@@ -1,5 +1,0 @@
-\begin{answer}
-On Dataset 2, GDA performs noticeably worse than logistic regression. GDA's decision boundary is tilted and fails to separate the two classes cleanly, whereas logistic regression finds a better boundary.
-
-GDA performs worse on DS2 because the data does not satisfy the Gaussian assumption: one of the classes appears to have a non-Gaussian (e.g., exponential) distribution. GDA's parametric generative model is mis-specified for this dataset, causing it to fit a poor boundary. Logistic regression, being discriminative, does not assume any particular distribution for $p(x|y)$ and therefore degrades more gracefully.
-\end{answer}

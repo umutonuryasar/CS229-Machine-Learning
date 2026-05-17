@@ -1,6 +1,0 @@
-\begin{answer}
-See \texttt{src/mnist/nn.py} for the implementation of \texttt{backward\_prop\_regularized}. The additional gradient terms due to $\lambda(\|W^{[1]}\|^2 + \|W^{[2]}\|^2)$ are $2\lambda W^{[1]}$ and $2\lambda W^{[2]}$ respectively; biases are not regularized.
-
-With regularization ($\lambda = 0.0001$), the training loss is slightly higher than without regularization (the regularizer penalizes large weights), but the \textbf{dev-set accuracy and test accuracy improve} because the model generalizes better. This matches the expected behavior: $L_2$ regularization reduces overfitting by shrinking weights toward zero, trading a small increase in training loss for a reduction in generalization gap. The plots are saved to \texttt{regularized.pdf}.
-\end{answer}
-
