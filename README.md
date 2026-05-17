@@ -17,7 +17,6 @@ As an Electrical and Electronics Engineer specializing in AI/ML, I have specific
 - **`/Extra Notes`**: Some extra suplementary readings. 
 - **`/Lecture Notes`**: Official CS229 Summer 2020 lecture PDFs (Lectures 01–12, Full Notes, Deep Learning Notes). Personal study notes maintained in Obsidian — not tracked in this repo.
 - **`/Problem Sets`**: Original problem set PDFs (PS0–PS3).
-- **`/Problem Sets Solutions`**: Worked solutions (PS0 complete; PS1–PS3 in progress).
 - **`/Final Project`**: CS229 capstone — Knowledge Distillation ablation study (Logit-KD vs Feature-KD, ResNet-50 → ResNet-18 on CIFAR-10).
   * `paper/` — Full project report (PDF + LaTeX source)
   * `poster/` — Project poster (PDF + LaTeX source)
